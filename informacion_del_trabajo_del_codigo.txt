@@ -1,0 +1,208 @@
+ 1. Qué hace el código.
+ * El codigo maneja varias clases y el objetivo final es que un cliente pueda interractuar con un cajero
+desde crearce una cuenta o varias, el mismo cliente escoge su contraseña. Luego de tener su cuenta
+puede interractuar con el cajero para retirar dinero, depositar, consultar saldo, traspaso de dinero y
+si el cliente desea puede cambiar de contraseña. Tambien tiene datos de cuenta y un historial del movimiento
+de la misma cuenta
+
+
+
+
+2. Descripción de los parámetros de cada método.
+*cliente:
+
+Tipo: Cliente
+Objetivo: El objeto Cliente que se desea guardar en el archivo.
+Restricciones: Debe ser una instancia válida de la clase Cliente.
+nombreArchivo:
+
+Tipo: String
+Objetivo: El nombre del archivo donde se va a guardar la información del cliente.
+Restricciones: Debe ser una cadena válida que represente un nombre de archivo accesible.
+Método: agregarCuentaAClienteEnArchivo
+cliente:
+
+Tipo: Cliente
+Objetivo: El objeto Cliente al que se le agregará la nueva cuenta en el archivo.
+Restricciones: Debe ser una instancia válida de la clase Cliente.
+cuenta:
+
+Tipo: Cuenta
+Objetivo: El objeto Cuenta que se desea agregar al cliente en el archivo.
+Restricciones: Debe ser una instancia válida de la clase Cuenta.
+nombreArchivo:
+
+Tipo: String
+Objetivo: El nombre del archivo donde se encuentra la información del cliente.
+Restricciones: Debe ser una cadena válida que represente un nombre de archivo accesible.
+Método: cargarDatosDesdeArchivo
+nombreArchivo:
+Tipo: String
+Objetivo: El nombre del archivo desde donde se cargarán los datos de los clientes.
+Restricciones: Debe ser una cadena válida que represente un nombre de archivo accesible.
+Método: actualizarSaldoEnArchivo
+archivo:
+
+Tipo: String
+Objetivo: El nombre del archivo donde se actualizará el saldo.
+Restricciones: Debe ser una cadena válida que represente un nombre de archivo accesible.
+cedulaCliente:
+
+Tipo: String
+Objetivo: La cédula del cliente cuyo saldo se actualizará.
+Restricciones: Debe ser una cadena válida que represente una cédula existente en el archivo.
+numeroCuenta:
+
+Tipo: String
+Objetivo: El número de la cuenta cuyo saldo se actualizará.
+Restricciones: Debe ser una cadena válida que represente un número de cuenta existente para el cliente.
+nuevoSaldoActual:
+
+Tipo: double
+Objetivo: El nuevo saldo actual que se establecerá para la cuenta.
+Restricciones: Debe ser un número válido.
+Método: actualizarContraseñaEnArchivo
+archivo:
+
+Tipo: String
+Objetivo: El nombre del archivo donde se actualizará la contraseña.
+Restricciones: Debe ser una cadena válida que represente un nombre de archivo accesible.
+cedulaCliente:
+
+Tipo: String
+Objetivo: La cédula del cliente cuya contraseña se actualizará.
+Restricciones: Debe ser una cadena válida que represente una cédula existente en el archivo.
+contraseña:
+
+Tipo: String
+Objetivo: La nueva contraseña que se establecerá para el cliente.
+Restricciones: Debe ser una cadena válida que represente una contraseña segura.
+Método: registrarMovimientoEnArchivo
+archivo:
+
+Tipo: String
+Objetivo: El nombre del archivo donde se registrará el movimiento.
+Restricciones: Debe ser una cadena válida que represente un nombre de archivo accesible.
+numeroCuenta:
+
+Tipo: String
+Objetivo: El número de cuenta en la que se registrará el movimiento.
+Restricciones: Debe ser una cadena válida que represente un número de cuenta existente.
+movimiento:
+
+Tipo: Movimiento
+Objetivo: El objeto Movimiento que se desea registrar.
+Restricciones: Debe ser una instancia válida de la clase Movimiento.
+Método: cargarMovimientosDesdeArchivo
+archivo:
+
+Tipo: String
+Objetivo: El nombre del archivo desde donde se cargarán los movimientos.
+Restricciones: Debe ser una cadena válida que represente un nombre de archivo accesible.
+numeroCuenta:
+
+Tipo: String
+Objetivo: El número de cuenta cuyos movimientos se cargarán.
+Restricciones: Debe ser una cadena válida que represente un número de cuenta existente.
+
+
+
+3. Descripción del valor de retorno de cada método.
+ * guardarClienteEnArchivo
+ cliente        Cliente a guardar.
+ nombreArchivo  Nombre del archivo donde se guarda el cliente. 
+ Descripción del valor de retorno: Este método no retorna ningún valor.
+
+agregarCuentaAClienteEnArchivo
+  cliente        Cliente al que se agregará la cuenta.
+  cuenta         Cuenta a agregar.
+  nombreArchivo  Nombre del archivo donde se guarda la cuenta. 
+  Descripción del valor de retorno: Este método no retorna ningún valor.
+ 
+
+cargarDatosDesdeArchivo
+ nombreArchivo  Nombre del archivo de donde se cargarán los datos.
+ ArrayList<Cliente> Lista de clientes cargados desde el archivo.
+ Descripción del valor de retorno: Este método retorna un ArrayList de objetos Cliente, que contiene los datos de todos los clientes cargados desde el archivo.
+ 
+
+ actualizarSaldoEnArchivo
+  archivo         Nombre del archivo donde se actualizará el saldo.
+  cedulaCliente   Cédula del cliente cuya cuenta se va a actualizar.
+  numeroCuenta    Número de la cuenta a actualizar.
+  nuevoSaldoActual Nuevo saldo a establecer en la cuenta.
+  Descripción del valor de retorno: Este método no retorna ningún valor 
+
+
+
+
+
+
+
+4. Excepciones que puede lanzar cada método.
+ *guardarClienteEnArchivo
+ Descripción del valor de retorno: Este método no retorna ningún valor.
+Excepciones:Si ocurre un error al escribir en el archivo.
+
+agregarCuentaAClienteEnArchivo
+Descripción del valor de retorno: Este método no retorna ningún valor. 
+Excepciones:Si ocurre un error al leer o escribir en el archivo.
+
+cargarDatosDesdeArchivo
+ ArrayList<Cliente> Lista de clientes cargados desde el archivo.
+ Descripción del valor de retorno: Este método retorna un ArrayList de objetos Cliente, que contiene los datos de todos los clientes cargados desde el archivo.
+ Excepciones:Si ocurre un error al leer el archivo.
+
+
+actualizarSaldoEnArchivo
+Descripción del valor de retorno: Este método no retorna ningún valor. 
+Excepciones:Si ocurre un error al leer o escribir en el archivo.
+ 
+actualizarContraseñaEnArchivo
+Descripción del valor de retorno: Este método no retorna ningún valor.
+Excepciones:Si ocurre un error al leer o escribir en el archivo.
+ 
+cargarMovimientosDesdeArchivo
+ ArrayList<Movimiento> Lista de movimientos cargados desde el archivo.
+ Descripción del valor de retorno: Este método retorna un ArrayList de objetos Movimiento, que contiene los datos de todos los movimientos cargados desde el archivo.
+ Excepciones:Si ocurre un error al leer el archivo y si ocurre un error al convertir una cadena en una fecha. 
+
+
+
+ 5. Ejemplos de cómo usar el código.
+ Guardar un nuevo cliente en el archivo
+
+ Cliente nuevoCliente = new Cliente("Juan", "123456789", "Dirección de Juan", "contraseña123");
+Cuenta cuenta = new Cuenta("001", "Cuenta de Ahorro", "USD", 100.0, 100.0);
+nuevoCliente.agregarCuenta(cuenta);
+RegistroArchivos.guardarClienteEnArchivo(nuevoCliente, "clientes.txt");
+
+
+
+Agregar una cuenta a un cliente ya registrado:
+
+Cliente clienteExistente = obtenerClienteDesdeAlgunaParte(); // Supongamos que tienes un método para obtener un cliente existente
+Cuenta nuevaCuenta = new Cuenta("002", "Cuenta Corriente", "USD", 200.0, 200.0);
+RegistroArchivos.agregarCuentaAClienteEnArchivo(clienteExistente, nuevaCuenta, "clientes.txt");
+
+
+
+Cargar los datos de los clientes desde el archivo:
+
+ArrayList<Cliente> clientes = RegistroArchivos.cargarDatosDesdeArchivo("clientes.txt");
+for (Cliente cliente : clientes) {
+    System.out.println(cliente);
+}
+
+
+
+Actualizar el saldo de una cuenta en el archivo:
+
+RegistroArchivos.actualizarSaldoEnArchivo("clientes.txt", "123456789", "001", 150.0);
+
+
+Actualizar la contraseña de un cliente en el archivo
+
+RegistroArchivos.actualizarContraseñaEnArchivo("clientes.txt", "123456789", "nuevaContraseña123");
+
+
